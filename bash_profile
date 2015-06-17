@@ -12,7 +12,7 @@ alias k="clear"
 alias subl="sublime"
 alias profile="subl ~/.bash_profile"
 alias refreshprofile="source ~/.bash_profile"
-alias appserver="bash ~/app_server.sh"
+alias appserver="bash ~/dot_files/app_server.sh"
 
 alias apiin="cd app/scripts/nextcapital-api-client"
 alias apiout="cd ../../.."
