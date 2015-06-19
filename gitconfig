@@ -1,0 +1,7 @@
+[user]
+	name = pearlsj
+	email = pearlmans@nextcapital.com
+[core]
+	excludesfile = /Users/pearlmans/.gitignore_global
+[alias]
+  edit = !$EDITOR $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}' )
