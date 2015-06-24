@@ -1,0 +1,16 @@
+#!/bin/sh
+cd `dirname $0`/../..
+
+branch_name=$(git branch | grep '*' | sed 's/* //')
+
+if [[ $branch_name =~ 'no branch' ]]
+then
+  exit 0
+else
+  grunt jshint
+
+  if [[ $? != 0 ]]; then
+    echo 'Commit aborted'
+    exit 1
+  fi
+fi

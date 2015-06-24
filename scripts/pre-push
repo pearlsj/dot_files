@@ -1,0 +1,29 @@
+#!/bin/sh
+
+cd `dirname $0`/../..
+
+protected_branch='master'
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+push_command=`ps -ocommand= -p $PPID`
+
+if [ $protected_branch = $current_branch ]
+then
+  if [[ $push_command =~ force|delete|-f ]]; then
+    printf '\n'
+    echo '****************************************************************************'
+    echo 'Prevented force-push to master. This is a very dangerous command.'
+    echo "Don't be a fool, stay in school."
+    echo '****************************************************************************'
+    printf '\n'
+    exit 1
+  fi
+
+  grunt jshint unit
+
+  if [[ $? != 0 ]]; then
+    echo 'Push aborted.'
+    exit 1
+  fi
+else
+  exit 0
+fi

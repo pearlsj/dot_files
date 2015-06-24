@@ -46,7 +46,7 @@ alias gd="clear && git diff"
 alias gl="clear && git log --max-count=20 $PRETTY"
 alias gp="git fetch --prune origin && git pull"
 alias gpr="git fetch --prune origin"
-alias grb="git pull --rebase origin master"
+alias grb="git rebase -i master --no-verify"
 alias gst="clear && git status"
 alias gsub="git submodule update"
 
