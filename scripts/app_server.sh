@@ -1,6 +1,6 @@
 #!/bin/bash
 
-commands=( "mysqld_safe" "passenger start -e local_production" "passenger start -p 3001" "RAILS_ENV=local_production rake market_data:use_latest" "sudo mongod" )
+commands=( "mysqld_safe" "passenger start -e local_production" "RAILS_ENV=local_production rake market_data:use_latest" "sudo mongod" )
 
 for command in "${commands[@]}"; do
   osascript\
