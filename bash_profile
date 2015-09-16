@@ -39,7 +39,8 @@ __git_complete gb _git_branch
 alias gci="git commit"
 __git_complete gci _git_commit
 
-alias gco="git checkout"
+# alias gco="git checkout"
+alias gco="git number checkout"
 __git_complete gco _git_checkout
 
 alias gd="clear && git diff"
@@ -47,9 +48,8 @@ alias gl="clear && git log --max-count=20 $PRETTY"
 alias gp="git fetch --prune origin && git pull"
 alias gpr="git fetch --prune origin"
 alias grb="git rebase -i master --no-verify"
-alias gst="clear && git status"
+alias gst="clear && git number"
 alias gsub="git submodule update"
 
-alias lastcommit="git log -p -1"
-alias tempcommit="git add --all; git commit -m 'Temp commit' --no-verify"
 alias amendcommit="git add --all; git commit --amend --no-edit"
+alias tempcommit="git add --all; git commit -m 'Temp commit' --no-verify"
