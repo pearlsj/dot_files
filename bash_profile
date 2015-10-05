@@ -32,7 +32,7 @@ source ~/.git-prompt.sh
 
 PRETTY="--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 
-alias ga="git add --all"
+alias ga="git number add"
 alias gb="git branch"
 __git_complete gb _git_branch
 
@@ -43,7 +43,7 @@ __git_complete gci _git_commit
 alias gco="git number checkout"
 __git_complete gco _git_checkout
 
-alias gd="clear && git diff"
+alias gd="clear && git number diff"
 alias gl="clear && git log --max-count=20 $PRETTY"
 alias gp="git fetch --prune origin && git pull"
 alias gpr="git fetch --prune origin"
