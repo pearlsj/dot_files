@@ -5,3 +5,5 @@
 	excludesfile = /Users/pearlmans/.gitignore_global
 [alias]
   edit = !$EDITOR $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}' )
+[alias]
+  open = !$EDITOR $(git diff --name-only master..$(git rev-parse --abbrev-ref HEAD))

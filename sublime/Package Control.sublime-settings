@@ -1,12 +1,15 @@
 {
-	"in_process_packages":
-	[
-	],
-	"installed_packages":
-	[
-		"HTML-CSS-JS Prettify",
-		"Jasmine JS",
-		"Package Control",
-		"Sass"
-	]
+  "bootstrapped": true,
+  "in_process_packages":
+  [
+  ],
+  "installed_packages":
+  [
+    "Babel",
+    "GitGutter",
+    "HTML-CSS-JS Prettify",
+    "Jasmine JS",
+    "Package Control",
+    "Sass"
+  ]
 }

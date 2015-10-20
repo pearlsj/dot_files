@@ -39,7 +39,6 @@ __git_complete gb _git_branch
 alias gci="git commit"
 __git_complete gci _git_commit
 
-# alias gco="git checkout"
 alias gco="git number checkout"
 __git_complete gco _git_checkout
 
