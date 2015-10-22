@@ -7,10 +7,19 @@ if [[ $branch_name =~ 'no branch' ]]
 then
   exit 0
 else
-  grunt jshint
+  changed_files=($(git diff --name-only --cached))
 
-  if [[ $? != 0 ]]; then
-    echo 'Commit aborted'
-    exit 1
-  fi
+  for filename in "${changed_files[@]}"
+  do
+    if [[ $filename == *.js ]]; then
+      grunt jshint
+
+      if [[ $? != 0 ]]; then
+        echo 'Commit aborted'
+        exit 1
+      fi
+
+      break
+    fi
+  done
 fi
