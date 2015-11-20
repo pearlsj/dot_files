@@ -8,18 +8,24 @@ then
   exit 0
 else
   changed_files=($(git diff --name-only --cached))
+  js_files=()
 
   for filename in "${changed_files[@]}"
   do
     if [[ $filename == *.js ]]; then
-      grunt jshint
-
-      if [[ $? != 0 ]]; then
-        echo 'Commit aborted'
-        exit 1
-      fi
-
-      break
+      js_files=(${js_files[@]} $filename)
     fi
   done
+
+  if [ ${#js_files[@]} -eq 0 ]; then
+    exit 0
+  else
+    js_files=$(IFS=, ; echo "${js_files[*]}")
+    grunt jshint:hook --files="$js_files"
+  fi
+
+  if [[ $? != 0 ]]; then
+    echo 'Commit aborted'
+    exit 1
+  fi
 fi
