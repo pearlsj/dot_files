@@ -10,9 +10,11 @@
   "bold_folder_labels": true,
   "color_scheme": "Packages/User/Monokai Soda.tmTheme",
   "detect_indentation": false,
+  "detect_slow_plugins": false,
   "ensure_newline_at_eof_on_save": true,
   "folder_exclude_patterns":
   [
+    "coverage",
     ".git",
     ".sass-cache",
     ".tmp"

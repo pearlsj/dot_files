@@ -20,9 +20,15 @@ alias apiout="cd ../../.."
 alias bbin="cd app/styles/building-blocks"
 alias bbout="cd ../../.."
 
+alias fidelityin="cd app/tenant-configs/fidelity"
+alias fidelityout="cd ../../.."
+
 alias gs="grunt serve"
 alias gu="grunt unit"
 alias hint="grunt jshint:test"
+
+alias gsf="grunt serve --tenant=fidelity"
+alias guf="grunt unit --tenant=fidelity"
 
 # Git autocomplete script and alias overrides
 if [ -f ~/.git-completion.bash ]; then
@@ -49,6 +55,7 @@ alias gd="clear && git diff"
 alias gl="clear && git log --max-count=20 $PRETTY"
 alias gp="git fetch --prune origin && git pull"
 alias gpr="git fetch --prune origin"
+alias gpu="git push origin $(git name-rev --name-only HEAD)"
 alias grb="git rebase -i master --no-verify"
 alias gst="clear && git"
 alias gsub="git submodule update"
